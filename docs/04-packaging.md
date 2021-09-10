@@ -7,7 +7,28 @@ could be packaged in multiple ways (highlighted below)
 
 ## Packaging application into fat Jar
 
-TBD
+Packaging into fat (uber) JAR for Scala application can be done using
+`sbt-assembly` plugin. This plugin can be enabled by adding below to 
+`project/plugin.sbt`
+
+```scala
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "1.1.0")
+```
+
+Post this, to publish the Scala application as fat JAR, we may use the 
+below sbt command
+
+```bash
+sbt assembly
+```
+
+This will create a fat JAR under `target/scala-2.13` folder which can be run
+using below approach
+
+```bash
+java -jar target/scala-2.13/spark-the-hard-way-assembly-0.1.0-SNAPSHOT.jar
+# hello
+```
 
 ## Packaging application as Docker images (local)
 
@@ -17,8 +38,7 @@ publishing in native formats.
 [Documentation](https://sbt-native-packager.readthedocs.io/en/stable/).
 [Repository](https://github.com/sbt/sbt-native-packager).
 
-Add a new file or add to existing `project/plugins.sbt` the below line to enable
-the autoplugins
+Add to existing `project/plugins.sbt` the below line to enable the autoplugins
 
 ```scala
 addSbtPlugin("com.github.sbt" % "sbt-native-packager" % "1.9.4")
