@@ -1,0 +1,26 @@
+# .gitignore
+
+### Scala ###
+*.class
+*.log
+
+### Metals ###
+.metals/
+.bloop/
+project/**/metals.sbt
+
+### SBT ###
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+
+### VisualStudioCode ###
+.vscode
+*.code-workspace
+.history/
