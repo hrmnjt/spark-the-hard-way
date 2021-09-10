@@ -2,10 +2,12 @@ import Dependencies._
 
 ThisBuild / scalaVersion     := "2.13.6"
 ThisBuild / version          := "0.1.0-SNAPSHOT"
-ThisBuild / organization     := "com.example"
-ThisBuild / organizationName := "example"
+ThisBuild / organization     := "dev.hrmnjt"
+ThisBuild / organizationName := "hrmnjt"
 
 lazy val root = (project in file("."))
+	.enablePlugins(JavaAppPackaging)
+	.enablePlugins(DockerPlugin)
   .settings(
     name := "spark-the-hard-way",
     libraryDependencies += scalaTest % Test
